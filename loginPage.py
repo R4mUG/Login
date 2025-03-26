@@ -43,7 +43,7 @@ def main(page : ft.Page):
     volver_btn = ft.ElevatedButton(text="Volver", on_click=volver)
 
     columna_datos = ft.Column(
-        controls=[ ft.Text("ÁRBOLES", size=40),
+        controls=[ ft.Text("USUARIOS", size=40),
                    nombre_tf,
                    email_tf,
                    contrasena_tf,
