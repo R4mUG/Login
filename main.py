@@ -1,8 +1,7 @@
 import flet as ft
 import loginPage
 import registroPage
-#formularioPage
-#consultasPage
+
 def main(page: ft.Page):
     page.title = "APP USUARIOS"
 

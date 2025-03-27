@@ -3,10 +3,10 @@ import psycopg2
 def connect():
     # Conectar a PostgreSQL
     conn = psycopg2.connect(
-        dbname="Login",
+        dbname="postgres",
         user="postgres",
         password="1234",
-        host="Localhost",
+        host="localhost",
         port="5432"
     )
     return conn
@@ -57,7 +57,7 @@ def consultar_usuarios():
     print (usuarios)
     return usuarios
 
-def insertar_usuario(nombre, email, contrasena, rol, fecha_nacimiento, fecha_registro):
+def insertar_usuario(nombre, email, contrasena, rol, fecha_nacimiento):
     """
     Inserta un nuevo árbol en la base de datos.
 
@@ -73,12 +73,12 @@ def insertar_usuario(nombre, email, contrasena, rol, fecha_nacimiento, fecha_reg
 
         # Consulta SQL para insertar un nuevo árbol en la tabla 'Arboles'
         query = """
-        INSERT INTO usuarios (nombre, email, contrasena, rol, fecha_nacimiento, fecha_registro)
-        VALUES (%s, %s, %s, %s,  %s,  %s)
+        INSERT INTO usuarios (nombre, email, contrasena, rol, fecha_nacimiento)
+        VALUES (%s, %s, %s, %s,  %s)
         """
 
         # Ejecutar la consulta pasando los valores como parámetros
-        cursor.execute(query, (nombre, email, contrasena, rol, fecha_nacimiento, fecha_registro))
+        cursor.execute(query, (nombre, email, contrasena, rol, fecha_nacimiento))
 
         # Confirmar la transacción
         conn.commit()

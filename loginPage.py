@@ -24,9 +24,9 @@ def main(page : ft.Page):
         nombre = nombre_tf.value
         email = email_tf.value
         contrasena = contrasena_tf.value
+        rol = rol_tf.value
         fecha_nacimiento = date_picker.value
-        fecha_registro = date_picker.value
-        Loginddbb.insertar_usuario(nombre, email, contrasena, fecha_nacimiento, fecha_registro)
+        Loginddbb.insertar_usuario(nombre, email, contrasena, rol, fecha_nacimiento)
 
     def volver(e):
         page.go("/consultas")
@@ -36,6 +36,7 @@ def main(page : ft.Page):
     nombre_tf = ft.TextField(label="Nombre", width=300)
     email_tf = ft.TextField(label="Email", width=300)
     contrasena_tf = ft.TextField(label="Contrasena", width=300)
+    rol_tf = ft.TextField(label="Rol", width=300)
 
 
     date_picker = ft.DatePicker(on_change=seleccionar_fecha, value=datetime.datetime.now())
@@ -47,10 +48,9 @@ def main(page : ft.Page):
                    nombre_tf,
                    email_tf,
                    contrasena_tf,
+                   rol_tf,
                    fecha_txt,
                    ft.FilledButton("FECHA NACIMIENTO", on_click=abrir_selector),
-                   fecha_txt,
-                   ft.FilledButton("FECHA REGISTRO", on_click=abrir_selector),
                    ft.FilledButton("CREAR USUARIO", on_click=crear_usuario),
                    volver_btn
                    ],
