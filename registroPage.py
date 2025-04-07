@@ -20,10 +20,7 @@ def main(page: ft.Page):
                 ft.DataCell(ft.Text((fila[1]))), #Nombre
                 ft.DataCell(ft.Text((fila[2]))), #Email
                 ft.DataCell(ft.Text((fila[3]))), #Contrasena
-                ft.DataCell(ft.Text((fila[4]))), #Rol
-                ft.DataCell(ft.Text(str(fila[5]))),  #Fecha_nacimiento
-                ft.DataCell(ft.Text(str(fila[6]))),  #Fecha_registro
-                ft.DataCell(ft.Text(str(fila[7]))),  #Ultimo_Login
+                ft.DataCell(ft.Text(str(fila[4]))),  #Fecha_nacimiento
             ]))
 
     def buscar_usuarios(e):
@@ -45,9 +42,7 @@ def main(page: ft.Page):
             ft.DataColumn(ft.Text("Nombre")),
             ft.DataColumn(ft.Text("Email")),
             ft.DataColumn(ft.Text("Contrasena")),
-            ft.DataColumn(ft.Text("Rol")),
             ft.DataColumn(ft.Text("Fecha_nacimiento")),
-            ft.DataColumn(ft.Text("Fecha_registro")),
 
         ]
     )

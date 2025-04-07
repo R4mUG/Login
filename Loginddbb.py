@@ -57,7 +57,7 @@ def consultar_usuarios():
     print (usuarios)
     return usuarios
 
-def insertar_usuario(nombre, email, contrasena, rol, fecha_nacimiento):
+def insertar_usuario(nombre, email, contrasena, fecha_nacimiento):
     """
     Inserta un nuevo árbol en la base de datos.
 
@@ -73,12 +73,12 @@ def insertar_usuario(nombre, email, contrasena, rol, fecha_nacimiento):
 
         # Consulta SQL para insertar un nuevo árbol en la tabla 'Arboles'
         query = """
-        INSERT INTO usuarios (nombre, email, contrasena, rol, fecha_nacimiento)
-        VALUES (%s, %s, %s, %s,  %s)
+        INSERT INTO usuarios (nombre, email, contrasena, fecha_nacimiento)
+        VALUES (%s, %s, %s, %s)
         """
 
         # Ejecutar la consulta pasando los valores como parámetros
-        cursor.execute(query, (nombre, email, contrasena, rol, fecha_nacimiento))
+        cursor.execute(query, (nombre, email, contrasena, fecha_nacimiento))
 
         # Confirmar la transacción
         conn.commit()
